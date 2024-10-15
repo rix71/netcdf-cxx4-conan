@@ -9,7 +9,7 @@ class NetCDFCxx4Recipe(ConanFile):
     package_type = "library"
 
     license = "MIT"
-    url = "<Package recipe repository url here, for issues about the package>"
+    url = "https://github.com/rix71/netcdf-cxx4-conan"
     description = "netcdf-cxx4 conan package"
 
     settings = "os", "compiler", "build_type", "arch"
