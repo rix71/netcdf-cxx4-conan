@@ -44,8 +44,8 @@ class NetCDFCxx4Recipe(ConanFile):
         # to `#include <hdf5.h>` from the `hdf5` package, but I guess the conan HDF5 package
         # sets the include directory so that it has to be `#include <hdf5/hdf5.h>`
         # ! Note: this was only an issue with the `-s build_type=Debug` flag
-        hdf5_includedir = os.path.join(
-            self.dependencies["hdf5"].cpp_info.includedirs[0], "hdf5"
+        hdf5_includedir = os.path.abspath(
+            os.path.join(self.dependencies["hdf5"].cpp_info.includedirs[0], "hdf5")
         )
         # This is the important part
         tc.variables["CMAKE_C_FLAGS"] = f"-I{hdf5_includedir}"
